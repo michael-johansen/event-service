@@ -1,9 +1,9 @@
-<h1>Event service</1>
+<h1>Event service</h1>
 <h2>Purpose of this service</h2>
 <p>Expose endpoints for a RESTFUL webservice for CRUD (Create, Read, Update and Delete) operations on events.</p>
 <p>This webservice will accept json and xml, it will also support json and xml responses.</p>
 
-<h2>Endpoints</2>
+<h2>Endpoints<h/2>
 <h3>/events</p>
 <ul>
   <li><code>GET</code>: Fetch all events</li>
