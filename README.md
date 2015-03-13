@@ -20,6 +20,5 @@
 <h3>How to use</h3>
 <ul>
   <li>Download Grails 2.X</li>
-  <li>Use the gradle wrapper to build the Grails project</li>
-  <li>Run the Grails application with</li>
+  <li>Run the Grails application with<code>Grails run-app</code></li>
 </ul>
