@@ -20,5 +20,6 @@
 <h3>How to use</h3>
 <ul>
   <li>Download Grails 2.X</li>
+  <li>The application expects a MySQL database on localhost called <code>event_service_development</code> with user <code>root</code> and password <code>mysecretpassword</code>
   <li>Run the Grails application with<code>Grails run-app</code></li>
 </ul>
