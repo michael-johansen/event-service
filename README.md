@@ -4,7 +4,7 @@
 <p>This webservice will accept json and xml, it will also support json and xml responses.</p>
 
 <h2>Endpoints</h2>
-<h3>/events</p>
+<h3>/events</h3>
 <ul>
   <li><code>GET</code>: Fetch all events</li>
   <li><code>POST</code>: Create a new event</li>
