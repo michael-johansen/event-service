@@ -36,6 +36,9 @@ environments {
         dataSource {
             dbCreate = "update"
             uri = new URI(System.env.DATABASE_URL)
+            url = "jdbc:mysql://"+uri.host+uri.path
+            username = uri.userInfo.split(":")[0]
+            password = uri.userInfo.split(":")[1]
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                jmxEnabled = true
