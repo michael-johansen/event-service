@@ -35,9 +35,7 @@ environments {
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:mysql://event-mysql.cj0ysuzz8kpl.eu-west-1.rds.amazonaws.com/event_db?useUnicode=yes&characterEncoding=UTF-8"
-            username = "eventRoot"
-            password = "eventRoot"
+            uri = new URI(System.env.DATABASE_URL)
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                jmxEnabled = true
