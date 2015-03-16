@@ -4,12 +4,12 @@
 <p>This webservice will accept json and xml, it will also support json and xml responses.</p>
 
 <h2>Endpoints</h2>
-<h3>/events</h3>
+<h3>/</h3>
 <ul>
   <li><code>GET</code>: Fetch all events (accepts three parameters, <code>max</code> which sets the max amount of desired results. <code>intervalStart</code> and <code>intervalEnd</code> which in combination sets the datetime interval for desired results.</li>
   <li><code>POST</code>: Create a new event</li>
 </ul>
-<h3>/events/{0}</h3>
+<h3>/{0}</h3>
 <ul>
   <li><code>GET</code>: Fetch a specific event where {0} is the ID of the event.</li>
   <li><code>PUT</code>: Update a specific event where {0} is the ID of the event.</li>
