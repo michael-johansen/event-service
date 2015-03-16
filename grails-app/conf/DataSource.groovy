@@ -18,7 +18,7 @@ hibernate {
 // environment specific settings
 environments {
     development {
-        dataSource {
+        dataSource {sure
             dbCreate = "create" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:mysql://localhost/event_service_development?useUnicode=yes&characterEncoding=UTF-8"
         }
