@@ -1,10 +1,6 @@
 dataSource {
     pooled = true
     jmxExport = true
-    driverClassName = "com.mysql.jdbc.Driver"
-    username = "root"
-    password = "mysecretpassword"
-    dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -20,7 +16,6 @@ environments {
     development {
         dataSource {
             dbCreate = "create" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:mysql://localhost/event_service_development?useUnicode=yes&characterEncoding=UTF-8"
         }
         hibernate {
             show_sql = true
@@ -34,6 +29,8 @@ environments {
     }
     production {
         dataSource {
+            driverClassName = "com.mysql.jdbc.Driver"
+            dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
             dbCreate = "update"
             uri = new URI(System.env.DATABASE_URL)
             url = "jdbc:mysql://"+uri.host+uri.path
