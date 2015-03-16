@@ -8,6 +8,7 @@ class UrlMappings {
         }
 
         "500"(view:'/error')
-        "/"(resources: "event")
+        "/"(controller: "event")
+        "/$id"(resource: "event")
 	}
 }
