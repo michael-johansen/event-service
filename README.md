@@ -6,7 +6,7 @@
 <h2>Endpoints</h2>
 <h3>/events</h3>
 <ul>
-  <li><code>GET</code>: Fetch all events</li>
+  <li><code>GET</code>: Fetch all events (accepts three parameters, <code>max</code> which sets the max amount of desired results. <code>intervalStart</code> and <code>intervalEnd</code> which in combination sets the datetime interval for desired results.</li>
   <li><code>POST</code>: Create a new event</li>
 </ul>
 <h3>/events/{0}</h3>
