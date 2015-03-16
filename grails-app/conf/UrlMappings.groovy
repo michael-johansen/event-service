@@ -8,7 +8,9 @@ class UrlMappings {
         }
 
         "500"(view:'/error')
-        "/"(controller: "event")
+        "/"(controller: "event"){
+            action = [POST:"save"]
+        }
         "/$id"(resource: "event")
 	}
 }
