@@ -17,9 +17,6 @@ environments {
         dataSource {
             dbCreate = "create" // one of 'create', 'create-drop', 'update', 'validate', ''
         }
-        hibernate {
-            show_sql = true
-        }
     }
     test {
         dataSource {
