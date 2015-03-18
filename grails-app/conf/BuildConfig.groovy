@@ -59,6 +59,7 @@ grails.project.dependency.resolution = {
         test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
 
         compile 'org.grails.plugins:logback:0.3.1'
+        compile "com.github.pukkaone:logback-gelf:1.1.6"
 
         runtime "org.slf4j:jul-to-slf4j:1.7.7"
         runtime "org.slf4j:log4j-over-slf4j:1.7.7"
