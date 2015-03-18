@@ -1,3 +1,6 @@
+import com.github.pukkaone.gelf.logback.GelfAppender
+import grails.util.Environment
+
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
@@ -97,5 +100,38 @@ environments {
 }
 
 logback = {
-    info 'no.ciber'
+    appenders {
+        appender new GelfAppender(
+                name: "GELF",
+                mdcIncluded: true,
+                graylogHost: "tcp:localhost",
+                graylogPort: 12201
+        )
+    }
+
+    info    "no.ciber"
+    error   'org.codehaus.groovy.grails.web.servlet'        // controllers
+            'org.codehaus.groovy.grails.web.pages'          // GSP
+            'org.codehaus.groovy.grails.web.sitemesh'       // layouts
+            'org.codehaus.groovy.grails.web.mapping.filter' // URL mapping
+            'org.codehaus.groovy.grails.web.mapping'        // URL mapping
+            'org.codehaus.groovy.grails.commons'            // core / classloading
+            'org.codehaus.groovy.grails.plugins'            // plugins
+            'org.codehaus.groovy.grails.orm.hibernate'      // hibernate integration
+            'org.springframework'
+            'org.hibernate'
+            'net.sf.ehcache.hibernate'
+    debug   "org.hibernate.SQL"
+
+    List<String> loggers = []
+    if(Environment.current == Environment.DEVELOPMENT){
+        loggers.add("console")
+    }
+    else{
+        loggers.add("GELF")
+    }
+    root{
+        info loggers as String[]
+        additivity = true
+    }
 }
