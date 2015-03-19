@@ -100,13 +100,15 @@ environments {
 }
 
 logback = {
-    appenders {
-        appender new GelfAppender(
-                name: "GELF",
-                mdcIncluded: true,
-                graylogHost: "tcp:localhost",
-                graylogPort: 12201
-        )
+    if(Environment.current == Environment.DEVELOPMENT) {
+        appenders {
+            appender new GelfAppender(
+                    name: "GELF",
+                    mdcIncluded: true,
+                    graylogHost: System.env.LOG_HOST,
+                    graylogPort: System.env.LOG_PORT
+            )
+        }
     }
 
     info    "no.ciber"
