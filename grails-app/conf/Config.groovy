@@ -100,7 +100,7 @@ environments {
 }
 
 logback = {
-    if(Environment.current == Environment.DEVELOPMENT) {
+    if(Environment.current != Environment.DEVELOPMENT) {
         appenders {
             appender new GelfAppender(
                     name: "GELF",
