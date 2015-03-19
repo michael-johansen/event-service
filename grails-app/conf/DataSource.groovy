@@ -30,7 +30,7 @@ environments {
             dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
             dbCreate = "update"
             uri = new URI(System.env.DATABASE_URL)
-            url = "jdbc:mysql://"+uri.host+uri.path
+            url = "jdbc:mysql://"+uri.host+uri.port+uri.path
             username = uri.userInfo.split(":")[0]
             password = uri.userInfo.split(":")[1]
             properties {
