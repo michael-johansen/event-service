@@ -105,8 +105,8 @@ logback = {
             appender new GelfAppender(
                     name: "GELF",
                     mdcIncluded: true,
-                    graylogHost: "tcp:"+System.env.LOG_HOST,
-                    graylogPort: System.env.LOG_PORT
+                    graylogHost: "tcp:" + (String) System.env.LOG_HOST,
+                    graylogPort: Integer.parseInt((String) System.env.LOG_PORT)
             )
         }
     }
@@ -123,7 +123,9 @@ logback = {
             'org.springframework'
             'org.hibernate'
             'net.sf.ehcache.hibernate'
-    debug   "org.hibernate.SQL"
+    if(Environment.current == Environment.DEVELOPMENT) {
+        debug   "org.hibernate.SQL"
+    }
 
     List<String> loggers = []
     if(Environment.current == Environment.DEVELOPMENT){
