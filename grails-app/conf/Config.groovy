@@ -105,7 +105,7 @@ logback = {
             appender new GelfAppender(
                     name: "GELF",
                     mdcIncluded: true,
-                    graylogHost: System.env.LOG_HOST,
+                    graylogHost: "tcp:"+System.env.LOG_HOST,
                     graylogPort: System.env.LOG_PORT
             )
         }
