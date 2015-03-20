@@ -1,4 +1,4 @@
-import org.apache.commons.logging.LogFactory
+import java.sql.Connection
 
 dataSource {
     pooled = true
@@ -31,7 +31,7 @@ environments {
             driverClassName = "com.mysql.jdbc.Driver"
             dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
             dbCreate = "update"
-            uri = new URI(System.env.DATABASE_URL)
+            uri = new URI(System.getenv("DATABASE_URL"))
             url = "jdbc:mysql://"+uri.host+":"+uri.port+uri.path
             username = uri.userInfo.split(":")[0]
             password = uri.userInfo.split(":")[1]
@@ -53,7 +53,7 @@ environments {
                testWhileIdle = true
                testOnReturn = false
                jdbcInterceptors = "ConnectionState"
-               defaultTransactionIsolation = java.sql.Connection.TRANSACTION_READ_COMMITTED
+               defaultTransactionIsolation = Connection.TRANSACTION_READ_COMMITTED
             }
         }
     }

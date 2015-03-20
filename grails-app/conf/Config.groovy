@@ -105,8 +105,8 @@ logback = {
             appender new GelfAppender(
                     name: "GELF",
                     mdcIncluded: true,
-                    graylogHost: "tcp:" + (String) System.env.LOG_HOST,
-                    graylogPort: Integer.parseInt((String) System.env.LOG_PORT)
+                    graylogHost: "tcp:" + System.getenv("LOG_HOST"),
+                    graylogPort: Integer.parseInt(System.getenv("LOG_PORT"))
             )
         }
     }
