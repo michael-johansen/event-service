@@ -24,13 +24,12 @@
   <li>Run the Grails application with<code>Grails run-app</code></li>
 </ul>
 <h3>Example of valid json to post</h3>
-<code>
-    {</br>
-    	"name": "Partytime",</br>
-    	"description": "The greatest party in the history of mankind!",</br>
-    	"startDate": "2015-03-25T15:47:30Z",</br>
-    	"endDate": "2015-03-25T17:47:30Z",</br>
-    	"location": "Tomter",</br>
-    	"users": ["Mathias", "Øyvind", "Joachim", "Mihaela", "Gjermund", "Michael"]</br>
-    }</br>
-</code>
+```json
+    {
+    	"name": "Partytime",
+    	"description": "The greatest party in the history of mankind!",
+    	"startDate": "2015-03-25T15:47:30Z",
+    	"endDate": "2015-03-25T17:47:30Z",
+    	"location": "Tomter",
+    	"users": ["Mathias", "Øyvind", "Joachim", "Mihaela", "Gjermund", "Michael"]
+    }
