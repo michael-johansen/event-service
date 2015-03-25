@@ -106,7 +106,8 @@ logback = {
                     name: "GELF",
                     mdcIncluded: true,
                     graylogHost: "tcp:" + System.getenv("LOG_HOST"),
-                    graylogPort: Integer.parseInt(System.getenv("LOG_PORT"))
+                    graylogPort: Integer.parseInt(System.getenv("LOG_PORT")),
+                    originHost: "event-service"
             )
         }
     }
