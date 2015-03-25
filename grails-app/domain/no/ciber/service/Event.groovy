@@ -5,14 +5,18 @@ class Event {
     String name
     Date createdDate = new Date()
     String description
-    Date eventDate
+    Date startDate
+    Date endDate
+    String location
     static hasMany = [ users: String]
 
     static constraints = {
         name blank: false
         description blank: false
-        eventDate blank: false
+        startDate blank: false
+        endDate blank: false
         createdDate blank: false
+        location blank: false
         users nullable: true
     }
 }

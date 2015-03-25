@@ -28,14 +28,14 @@ class EventController extends RestfulController {
         if (intervalStart && intervalEnd && max) {
             Date startDate = DateTime.parse(intervalStart).toDate()
             Date endDate = DateTime.parse(intervalEnd).toDate()
-            result = Event.findAllByEventDateBetween(startDate, endDate)
+            result = Event.findAllByStartDateBetween(startDate, endDate)
             if (result.size() > max) {
                 result = result.subList(0, max)
             }
         } else if (intervalStart && intervalEnd && !max) {
             Date startDate = DateTime.parse(intervalStart).toDate()
             Date endDate = DateTime.parse(intervalEnd).toDate()
-            result = Event.findAllByEventDateBetween(startDate, endDate)
+            result = Event.findAllByStartDateBetween(startDate, endDate)
         } else {
             params.max = Math.min(max ?: 10, 100)
             result = listAllResources(params)
