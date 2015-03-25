@@ -23,3 +23,14 @@
   <li>The application expects a MySQL database on localhost called <code>event_service_development</code> with user <code>root</code> and password <code>mysecretpassword</code>
   <li>Run the Grails application with<code>Grails run-app</code></li>
 </ul>
+<h3>Example of valid json to post</h3>
+<code>
+    {
+    	"name": "Partytime",
+    	"description": "The greatest party in the history of mankind!",
+    	"startDate": "2015-03-25T15:47:30Z",
+    	"endDate": "2015-03-25T17:47:30Z",
+    	"location": "Tomter",
+    	"users": ["Mathias", "Øyvind", "Joachim", "Mihaela", "Gjermund", "Michael"]
+    }
+</code>
