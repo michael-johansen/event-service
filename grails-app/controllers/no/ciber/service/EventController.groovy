@@ -4,6 +4,7 @@ import grails.rest.RestfulController
 
 import grails.transaction.Transactional
 import org.apache.commons.logging.LogFactory
+import org.codehaus.groovy.grails.orm.hibernate.cfg.NamedCriteriaProxy
 import org.codehaus.groovy.grails.web.servlet.HttpHeaders
 import org.joda.time.DateTime
 
@@ -24,23 +25,8 @@ class EventController extends RestfulController {
     }
 
     def getResult(String intervalStart, String intervalEnd, Integer max) {
-        List<Event> result
-        if (intervalStart && intervalEnd && max) {
-            Date startDate = DateTime.parse(intervalStart).toDate()
-            Date endDate = DateTime.parse(intervalEnd).toDate()
-            result = Event.findAllByStartDateBetween(startDate, endDate)
-            if (result.size() > max) {
-                result = result.subList(0, max)
-            }
-        } else if (intervalStart && intervalEnd && !max) {
-            Date startDate = DateTime.parse(intervalStart).toDate()
-            Date endDate = DateTime.parse(intervalEnd).toDate()
-            result = Event.findAllByStartDateBetween(startDate, endDate)
-        } else {
-            params.max = Math.min(max ?: 10, 100)
-            result = listAllResources(params)
-        }
-        result
+        params.max = Math.min(max ?: 10, 100)
+        return Event.filterOnStartDate(intervalStart).filterOnEndDate(intervalEnd).list(params)
     }
 
     @Override
