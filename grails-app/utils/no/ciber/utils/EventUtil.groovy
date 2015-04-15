@@ -3,10 +3,10 @@ package no.ciber.utils
  * Created by bjerke.
  */
 class EventUtil {
-    static List<Long> getIdsFromUsersParameter(String users) {
+    static List<Long> getIdsFromEventsParameter(String events) {
         def ids = new ArrayList<Long>()
-        if (users != null && !users.equals("")) {
-            def idStrings = users.split(",")
+        if (events != null && !events.equals("")) {
+            def idStrings = events.split(",")
             for (String idString : idStrings) {
                 ids.add(Long.parseLong(idString))
             }
