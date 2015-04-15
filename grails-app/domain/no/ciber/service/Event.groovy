@@ -10,7 +10,7 @@ class Event {
     Date startDate
     Date endDate
     Integer location
-    static hasMany = [ users: String]
+    static hasMany = [ users: Integer]
 
     static constraints = {
         name blank: false
