@@ -9,7 +9,7 @@ class Event {
     String description
     Date startDate
     Date endDate
-    String location
+    Integer location
     static hasMany = [ users: String]
 
     static constraints = {
