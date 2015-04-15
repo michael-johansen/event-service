@@ -1,12 +1,11 @@
 package no.ciber.service
 
 import grails.rest.RestfulController
+import no.ciber.utils.EventUtil
 
 import grails.transaction.Transactional
 import org.apache.commons.logging.LogFactory
-import org.codehaus.groovy.grails.orm.hibernate.cfg.NamedCriteriaProxy
 import org.codehaus.groovy.grails.web.servlet.HttpHeaders
-import org.joda.time.DateTime
 
 import static org.springframework.http.HttpStatus.CREATED
 
@@ -19,14 +18,14 @@ class EventController extends RestfulController {
         super(Event)
     }
 
-    def index(Integer max, String intervalStart, String intervalEnd) {
-        List<Event> result = getResult(intervalStart, intervalEnd, max)
+    def index(Integer max, String intervalStart, String intervalEnd, String users) {
+        List<Event> result = getResult(intervalStart, intervalEnd, max, users)
         respond result, model: [("${resourceName}Count".toString()): countResources()]
     }
 
-    def getResult(String intervalStart, String intervalEnd, Integer max) {
+    def getResult(String intervalStart, String intervalEnd, Integer max, String users) {
         params.max = Math.min(max ?: 10, 100)
-        return Event.filterOnStartDate(intervalStart).filterOnEndDate(intervalEnd).list(params)
+        return Event.filterOnStartDate(intervalStart).filterOnEndDate(intervalEnd).filterOnIds(EventUtil.getIdsFromUsersParameter(users)).list(params)
     }
 
     @Override

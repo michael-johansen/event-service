@@ -38,5 +38,11 @@ class Event {
                     gt('endDate', DateTime.parse(inEndtDate).toDate())
                 }
         }
+        filterOnIds{
+            List<Long> ids ->
+                if(ids){
+                    inList('id', ids)
+                }
+        }
     }
 }
