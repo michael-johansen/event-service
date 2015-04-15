@@ -9,15 +9,15 @@
   <li><code>GET</code>: Fetch all events (accepts three parameters, <code>max</code> which sets the max amount of desired results. <code>intervalStart</code> and <code>intervalEnd</code> which in combination sets the datetime interval for desired results.</li>
   <li><code>POST</code>: Create a new event</li>
 </ul>
-<p>Example of valid json to post</p>
+<p>Example of valid json to post, remember the <code>Content-Type</code> header <code>application/json</code></p>
 ```json
 {
 	"name": "Partytime",
 	"description": "The greatest party in the history of mankind!",
 	"startDate": "2015-03-25T15:47:30Z",
 	"endDate": "2015-03-25T17:47:30Z",
-	"location": "Tomter",
-	"users": ["Mathias", "Øyvind", "Joachim", "Mihaela", "Gjermund", "Michael"]
+	"location": 7,
+	"users": [1,2,3,4]
 }
 ```
 
