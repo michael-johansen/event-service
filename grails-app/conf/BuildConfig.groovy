@@ -60,6 +60,7 @@ grails.project.dependency.resolution = {
 
         compile 'org.grails.plugins:logback:0.3.1'
         compile "com.github.pukkaone:logback-gelf:1.1.6"
+        compile 'org.jadira.usertype:usertype.jodatime:2.0.1'
 
         runtime "org.slf4j:jul-to-slf4j:1.7.7"
         runtime "org.slf4j:log4j-over-slf4j:1.7.7"
