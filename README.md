@@ -14,8 +14,8 @@
 {
 	"name": "Partytime",
 	"description": "The greatest party in the history of mankind!",
-	"startDate": "2015-03-25T15:47:30Z",
-	"endDate": "2015-03-25T17:47:30Z",
+	"startDate": "2015-04-22T11:12:50.783+02:00",
+	"endDate": "2015-04-22T11:12:50.783+02:00",
 	"location": 7,
 	"users": [1,2,3,4]
 }
