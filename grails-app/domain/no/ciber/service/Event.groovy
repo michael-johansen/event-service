@@ -23,10 +23,10 @@ class Event {
         name blank: false
         description blank: false
         description size: 0..1000
-        startDate blank: false
-        endDate blank: false
-        createdDate blank: false
-        location blank: false
+        startDate nullable: false
+        endDate nullable: false
+        createdDate nullable: false
+        location nullable: false
         users nullable: true
     }
 
