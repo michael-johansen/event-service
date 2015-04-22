@@ -1,5 +1,6 @@
 package no.ciber.service
 
+import org.jadira.usertype.dateandtime.joda.PersistentDateTime
 import org.joda.time.DateTime
 
 class Event {
@@ -11,6 +12,12 @@ class Event {
     DateTime endDate
     Integer location
     static hasMany = [ users: Integer]
+
+    static mapping = {
+        createdDate type: PersistentDateTime
+        startDate type: PersistentDateTime
+        endDate type: PersistentDateTime
+    }
 
     static constraints = {
         name blank: false
