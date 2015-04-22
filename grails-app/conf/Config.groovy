@@ -1,5 +1,7 @@
 import com.github.pukkaone.gelf.logback.GelfAppender
 import grails.util.Environment
+import org.jadira.usertype.dateandtime.joda.PersistentDateTime
+import org.joda.time.DateTime
 
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
@@ -13,6 +15,10 @@ import grails.util.Environment
 // if (System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
+
+grails.gorm.default.mapping = {
+    "user-type" type: PersistentDateTime, class: DateTime
+}
 
 jodatime.format.html5 = true
 
