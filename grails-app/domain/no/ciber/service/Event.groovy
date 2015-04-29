@@ -29,15 +29,15 @@ class Event {
 
 
         filterOnStartDate{
-            String inStartDate ->
+            Long inStartDate ->
                 if(inStartDate){
-                    gt('startDate', DateTime.parse(inStartDate).toDateTime())
+                    gt('startDate', inStartDate)
                 }
         }
         filterOnEndDate{
-            String inEndDate ->
+            Long inEndDate ->
                 if(inEndDate){
-                    gt('endDate', DateTime.parse(inEndDate).toDateTime())
+                    gt('endDate', inEndDate)
                 }
         }
         filterOnIds{

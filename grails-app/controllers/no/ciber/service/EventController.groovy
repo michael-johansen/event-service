@@ -18,12 +18,12 @@ class EventController extends RestfulController {
         super(Event)
     }
 
-    def index(Integer max, String intervalStart, String intervalEnd, String events) {
+    def index(Integer max, Long intervalStart, Long intervalEnd, String events) {
         List<Event> result = getResult(intervalStart, intervalEnd, max, events)
         respond result, model: [("${resourceName}Count".toString()): countResources()]
     }
 
-    def getResult(String intervalStart, String intervalEnd, Integer max, String events) {
+    def getResult(Long intervalStart, Long intervalEnd, Integer max, String events) {
         params.max = Math.min(max ?: 10, 100)
         return Event.filterOnStartDate(intervalStart).filterOnEndDate(intervalEnd).filterOnIds(EventUtil.getIdsFromEventsParameter(events)).list(params)
     }
