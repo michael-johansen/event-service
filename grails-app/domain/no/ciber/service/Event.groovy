@@ -1,24 +1,17 @@
 package no.ciber.service
 
-import org.jadira.usertype.dateandtime.joda.PersistentInstantAsMillisLong
 import org.joda.time.DateTime
 import org.joda.time.Instant
 
 class Event {
 
     String name
-    Instant createdDate = new Instant()
+    Long createdDate = new Instant().millis
     String description
-    Instant startDate
-    Instant endDate
+    Long startDate
+    Long endDate
     Integer location
     static hasMany = [ users: Integer]
-
-    static mapping = {
-        createdDate type: PersistentInstantAsMillisLong
-        startDate type: PersistentInstantAsMillisLong
-        endDate type: PersistentInstantAsMillisLong
-    }
 
     static constraints = {
         name blank: false
