@@ -35,9 +35,9 @@ class Event {
                 }
         }
         filterOnEndDate{
-            String inEndtDate ->
-                if(inEndtDate){
-                    gt('endDate', DateTime.parse(inEndtDate).toDateTime())
+            String inEndDate ->
+                if(inEndDate){
+                    gt('endDate', DateTime.parse(inEndDate).toDateTime())
                 }
         }
         filterOnIds{
