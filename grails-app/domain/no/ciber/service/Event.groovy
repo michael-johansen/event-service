@@ -29,6 +29,7 @@ class Event {
         createdDate nullable: false
         location nullable: false
         users nullable: true
+        users blank: true
     }
 
     static namedQueries = {
